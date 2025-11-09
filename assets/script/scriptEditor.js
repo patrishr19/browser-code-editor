@@ -81,8 +81,8 @@ textArea.addEventListener("input", (e) => {
 
 /*
     TO DO
-    LINE NUMBERS
-    FULL HEADER
+    LINE NUMBERS ## DONE
+    FULL HEADER ## DONE
     COLLAPSING
     UNDO REDO
     EXPORT IMPORT
