@@ -21,8 +21,26 @@ body, html{
     z-index: 3;
     flex-direction: row;
     min-height: 1rem;
+    max-width: 100%;
     width: 100%;
     background-color: rgb(57, 55, 55);
+    padding-left: 1rem;
+    gap: 1rem;
+    align-items: center;
+}
+.header-brand{
+    font-size: .8rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300;
+}
+.header-item{
+    font-size: .6rem;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 200;
 }
 .code-box{
     margin-top: 1rem;
