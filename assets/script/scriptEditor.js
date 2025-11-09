@@ -1,7 +1,15 @@
 // JS
 
+function getLinesNumber(element) {
+    let textLines = element.value.split("\n");
+    let currentLinesNumber = textLines.length;
+    return currentLinesNumber;
+}
+
+let lineBox = document.querySelector(".line-box");
 let textArea = document.querySelector(".code-text");
 textArea.addEventListener("keydown", (e) => {
+    // #region TAB AND SHIFT TAB
     if (e.key === "Tab" && e.shiftKey) {
         e.preventDefault();
         const start = textArea.selectionStart;
@@ -18,6 +26,8 @@ textArea.addEventListener("keydown", (e) => {
         textArea.selectionStart = lineStart;
         textArea.selectionEnd = lineStart + newBlock.length;
 
+        console.log(textArea.cols);
+        console.log(textArea.rows);
         return;
         
     }
@@ -44,4 +54,37 @@ textArea.addEventListener("keydown", (e) => {
             textArea.selectionEnd = lineStart + newBlock.length;
         }   
     }
+    // #endregion
+    if (e.key === "s" && e.ctrlKey) {
+        e.preventDefault();
+       alert("saving is not complete");
+    }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    let span = document.createElement("span");
+    span.innerHTML = "1";
+    lineBox.append(span);
+});
+textArea.addEventListener("input", (e) => {
+    let linesNumber = getLinesNumber(textArea);
+    console.log(linesNumber);
+    let allLines = lineBox.querySelectorAll("span");
+    allLines.forEach(element => {
+        element.remove();
+    });
+    for (let index = 1; index <= linesNumber; index++) {
+        let span = document.createElement("span");
+        span.innerHTML = index;
+        lineBox.append(span);
+    }
+});
+
+/*
+    TO DO
+    LINE NUMBERS
+    FULL HEADER
+    COLLAPSING
+    UNDO REDO
+    EXPORT IMPORT
+    SYNTAX HIGHLIGHTING
+*/
