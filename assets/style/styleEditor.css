@@ -1,0 +1,41 @@
+body, html{
+    height: 100%;
+    margin: 0;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.wrapper{
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+}
+.header-bar{
+    display: flex;
+    position: fixed;
+    z-index: 3;
+    flex-direction: row;
+    min-height: 1rem;
+    width: 100%;
+    background-color: rgb(57, 55, 55);
+}
+.code-box{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+}
+.code-text{
+    background-color: inherit;
+    border: none;
+    outline: 12px solid white;
+    color: white;
+    width: 100%;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-size: 1rem;
+}
