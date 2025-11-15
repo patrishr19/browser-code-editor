@@ -12,17 +12,27 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="header-bar"> <!-- fixed -->
-            <a href="#" class="header-brand">Code editor</a>
-            <a href="#" class="header-item">Import file</a>
-            <a href="#" class="header-item">Export file</a>
-            <a href="#" class="header-item">Options</a>
-            <a href="#" class="header-item">New file</a>
-        </div>
-        <div class="line-box">
-        </div>
-        <div class="code-box">
-            <textarea name="codeText" class="code-text" autofocus>// Code Here</textarea>
+        <div class="main-box">
+            <div class="header-bar">
+                <div class="header-bar-side">
+                    <img src="assets/img/notepad.png" alt="notepad icon">
+                    <span>Browser Code Editor - Patrishr19</span>
+                </div>
+                <div class="header-bar-side revere-side">
+                    <button class="header-bar-btn close-btn">X</button>
+                </div>
+            </div>
+            <div class="sub-header-bar">
+                <a href="#" class="sub-item">File</a>
+                <a href="#" class="sub-item">Edit</a>
+                <a href="#" class="sub-item">Options</a>
+                <a href="#" class="sub-item">Help</a>
+            </div>
+            <div class="text-box">
+                <div class="line-box">
+                </div>
+                <textarea name="codeText" wrap="off" class="code-text" autofocus>// made by patrishr19 ;)</textarea>
+            </div>
         </div>
     </div>
 <script src="assets/script/scriptEditor.js"></script>

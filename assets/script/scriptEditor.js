@@ -5,7 +5,7 @@ function getLinesNumber(element) {
     let currentLinesNumber = textLines.length;
     return currentLinesNumber;
 }
-
+let undoRedo = [];
 let lineBox = document.querySelector(".line-box");
 let textArea = document.querySelector(".code-text");
 textArea.addEventListener("keydown", (e) => {
@@ -59,6 +59,10 @@ textArea.addEventListener("keydown", (e) => {
         e.preventDefault();
        alert("saving is not complete");
     }
+    if (e.key === "z" && e.ctrlKey) {
+        //e.preventDefault();
+
+    }
 });
 document.addEventListener("DOMContentLoaded", () => {
     let span = document.createElement("span");
@@ -66,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lineBox.append(span);
 });
 textArea.addEventListener("input", (e) => {
+    undoRedo += textArea.value
     let linesNumber = getLinesNumber(textArea);
     console.log(linesNumber);
     let allLines = lineBox.querySelectorAll("span");
@@ -78,13 +83,19 @@ textArea.addEventListener("input", (e) => {
         lineBox.append(span);
     }
 });
-
+textArea.addEventListener("scroll", () => {
+    lineBox.scrollTop = textArea.scrollTop;
+});
 /*
     TO DO
     LINE NUMBERS ## DONE
     FULL HEADER ## DONE
-    COLLAPSING
-    UNDO REDO
-    EXPORT IMPORT
-    SYNTAX HIGHLIGHTING
+    VAPORWAVE UI LAST BORDER - #fefefe #dedede #bfbfbf #7f7f7f inner - #bfbfbf, textarea - #fefefe, close buttons - #bfbfc0, text-000000 ## DONE
+    UNDO REDO - save value of textarea to a array with max of 100 items, undo each word (separated by " ")
+    SYNTAX HIGHLIGHTING - start with comments //
+    COLLAPSING - #region #endregion
+    FILE - NEW FILE, IMPORT, EXPORT
+    EDIT - CLICKABLE UNDO, REDO, COPY, CUT, PASTE, DELETE, SELECT ALL
+    OPTIONS - UI CHANGES, FONTS, THEMES
+    HELP - VIEW SOURCE, OPEN GITHUB, SHOW README
 */
